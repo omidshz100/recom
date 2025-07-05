@@ -1,5 +1,1 @@
 .venv
-
-# MovieLens dataset files (too large for GitHub)
-ml-latest/
-*.csv
