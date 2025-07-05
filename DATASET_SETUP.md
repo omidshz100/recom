@@ -1,22 +1,34 @@
 # Dataset Setup Instructions
 
-## MovieLens Dataset Download
+## MovieLens Dataset
 
-This movie recommender system uses the MovieLens dataset, which is not included in this repository due to file size limitations (591 MB).
+This movie recommender system uses the MovieLens dataset, which is **now included in this repository** using Git Large File Storage (LFS) to handle the large CSV files.
 
-### Steps to Download and Setup:
+### Quick Start:
 
-1. **Download the MovieLens 25M Dataset:**
-   - Visit: https://grouplens.org/datasets/movielens/
-   - Download the "ml-25m.zip" file (size: ~265 MB)
-
-2. **Extract the Dataset:**
+1. **Clone the Repository:**
    ```bash
-   unzip ml-25m.zip
-   mv ml-25m ml-latest
+   git clone https://github.com/omidshz100/recom.git
+   cd recom
    ```
 
-3. **Verify File Structure:**
+2. **Install Git LFS (if not already installed):**
+   ```bash
+   # On macOS with Homebrew
+   brew install git-lfs
+   
+   # On Ubuntu/Debian
+   sudo apt install git-lfs
+   
+   # On Windows, download from: https://git-lfs.github.io/
+   ```
+
+3. **Pull LFS Files:**
+   ```bash
+   git lfs pull
+   ```
+
+4. **Verify File Structure:**
    Your project directory should look like this:
    ```
    recom/
@@ -31,7 +43,7 @@ This movie recommender system uses the MovieLens dataset, which is not included 
    └── README.md
    ```
 
-4. **Run the Application:**
+5. **Run the Application:**
    ```bash
    pip install -r requirements.txt
    streamlit run movie_recommender.py
@@ -44,7 +56,7 @@ This movie recommender system uses the MovieLens dataset, which is not included 
 - **Time Period:** 1995-2019
 
 ### Note:
-The `ml-latest/` directory is included in `.gitignore` to prevent accidentally committing large files to the repository.
+Large CSV files are managed using Git LFS (Large File Storage) to efficiently handle files over GitHub's 100MB limit. The `.gitattributes` file configures `*.csv` files to be tracked by LFS.
 
 ### Alternative: Smaller Dataset
 If you prefer a smaller dataset for testing:
