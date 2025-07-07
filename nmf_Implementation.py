@@ -167,7 +167,9 @@ if __name__ == "__main__":
     
     # Create test matrix
     np.random.seed(42)  # For reproducible results
-    A = np.random.rand(6, 8)  # Smaller matrix for better readability
+    # Create matrix with some zero values (sparse-like)
+    A = np.random.rand(6, 8)  # Start with random values
+    A[A < 0.3] = 0  # Set ~30% of values to zero for sparsity
     print_matrix_info(A, "Original Matrix A", sizeCondition=800)
     
     rank = 3
