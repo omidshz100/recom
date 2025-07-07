@@ -198,7 +198,8 @@ if __name__ == "__main__":
     reconstruction_nndsvd = W_nndsvd @ H_nndsvd
     error_nndsvd = np.linalg.norm(A - reconstruction_nndsvd, 'fro')
     print(f"\nReconstruction error: {error_nndsvd:.6f}")
-    
+    print_matrix_info(reconstruction_nndsvd, "NNDSVD Reconstruction Matrix", sizeCondition=800)
+
     # Test 3: Multiplicative Update
     print("\n" + "-" * 40)
     print("3. MULTIPLICATIVE UPDATE ALGORITHM")
