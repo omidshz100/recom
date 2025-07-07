@@ -6,3 +6,5 @@ numpy
 plotly
 seaborn
 matplotlib
+jupyter
+notebook
